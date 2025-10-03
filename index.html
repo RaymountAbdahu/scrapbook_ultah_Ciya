@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Novia Oktaviani!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="countdownContainer" class="countdown-container">
+        <div class="countdown-box">
+            <h1>Sesuatu yang spesial sedang disiapkan... 🤫</h1>
+            <p>Kejutan untuk Ciyaa akan terbuka dalam:</p>
+            <div id="timer" class="timer">
+                <div><span id="days">0</span> Hari</div>
+                <div><span id="hours">0</span> Jam</div>
+                <div><span id="minutes">0</span> Menit</div>
+                <div><span id="seconds">0</span> Detik</div>
+            </div>
+            <p class="hint">Sabar yaa, buka lagi tanggal 7 Oktober!</p>
+        </div>
+    </div>
+
+    <div id="scrapbookContent" class="hidden">
+        <div class="scrapbook-container">
+            <h1>Happy Birthday, Ciyaa! 🎂</h1>
+            <div class="scrapbook-slider">
+                <div class="slide active">
+                    <div class="page-item photo photo-1">
+                        <img src="Ciya1.JPG" alt="Foto Utama">
+                        <p>Selamat bertambah usia yaa!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="page-item note">
+                        <h2>Sebuah Pesan Untukmu 💌</h2>
+                        <p>Semoga panjang umur, sehat selalu, dan semua yang kamu cita-citakan tercapai tahun ini. Terima kasih sudah menjadi teman yang luar biasa!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="page-item photo photo-2">
+                        <img src="Ciya2.JPG" alt="Kenangan 1">
+                        <p>Momen paling konyol kita, haha!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="page-item note note-2">
+                        <h2>My Wish For You ✨</h2>
+                        <p>Teruslah jadi pribadi yang ceria dan menginspirasi. Perjalananmu masih panjang dan aku akan selalu ada untuk mendukungmu. Semangat!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="page-item photo photo-3">
+                        <img src="foto_bersama.jpg" alt="Foto Bersama">
+                        <p>Cheers for more adventures!</p>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn prev">&#10094;</button>
+            <button class="nav-btn next">&#10095;</button>
+            <div class="closing-note">
+                <p>From Your ??,<br><strong>Ray_Mount</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="confetti"></canvas>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

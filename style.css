@@ -1,0 +1,213 @@
+body, html {
+    overflow: hidden; /* Mencegah scroll saat countdown */
+}
+
+.hidden {
+    display: none !important; /* Class utility untuk menyembunyikan elemen */
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0eada, #d2b48c);
+    color: #5a4a3a;
+    text-align: center;
+    padding: 20px;
+}
+
+.countdown-box {
+    background: rgba(255, 253, 245, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-box h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.countdown-box p {
+    font-size: 1.2em;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.timer div {
+    background: #5a4a3a;
+    color: #fffdf5;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.timer span {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.hint {
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* === Pastikan scrapbook tidak fullscreen agar confetti terlihat === */
+.scrapbook-container {
+    margin: 20px; /* Beri sedikit margin */
+}
+
+/* === Canvas untuk Confetti === */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none; /* Agar tidak menghalangi klik */
+}
+
+body {
+    background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+    font-family: 'Gochi Hand', cursive;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.scrapbook-container {
+    background: #fffbe7;
+    border: 6px solid #f8b500;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 1.5px 0 #f8b500 inset;
+    max-width: 420px;
+    margin: 48px auto;
+    padding: 32px 24px 24px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    color: #f8b500;
+    font-size: 2.2em;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px 0 #fffbe7, 0 2px 8px #f8b50033;
+}
+
+/* === SLIDER STYLES === */
+.scrapbook-slider {
+    position: relative;
+    min-height: 320px;
+    margin-bottom: 24px;
+}
+
+.slide {
+    display: none;
+    animation: fadeIn 0.7s;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+/* === ITEM STYLES (FOTO & NOTE) === */
+.page-item {
+    background: #fff;
+    border: 2px dashed #f8b500;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #f8b50022;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 320px;
+    text-align: center;
+    position: relative;
+}
+
+.page-item.photo img {
+    width: 90%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 16px #f8b50033;
+}
+
+.page-item.note {
+    background: #fffbe7;
+    border-style: dotted;
+}
+
+.page-item.note-2 {
+    background: #ffe7e7;
+    border-color: #ff8c8c;
+}
+
+.page-item.photo-2 {
+    border-color: #8cc6ff;
+}
+
+.page-item.photo-3 {
+    border-color: #baffc9;
+}
+
+/* === TOMBOL NAVIGASI === */
+.nav-btn {
+    background: #f8b500;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 2em;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    box-shadow: 0 2px 8px #f8b50044;
+    transition: background 0.2s;
+    z-index: 2;
+}
+
+.nav-btn:hover {
+    background: #ff8c8c;
+}
+
+.nav-btn.prev {
+    left: -24px;
+}
+
+.nav-btn.next {
+    right: -24px;
+}
+
+/* Pesan Penutup */
+.closing-note {
+    text-align: right;
+    margin-top: 24px;
+    font-size: 1.1em;
+    color: #f8b500;
+    font-style: italic;
+}
+
+#confetti {
+    position: fixed;
+    pointer-events: none;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 10;
+}
+
