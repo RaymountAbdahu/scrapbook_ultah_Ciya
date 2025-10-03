@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.slide');
     const nextBtn = document.querySelector('.next');
     const prevBtn = document.querySelector('.prev');
-    
+
     let currentSlide = 0;
     const slideInterval = 5000; // Ganti slide setiap 5 detik (5000 milidetik)
 
@@ -130,9 +130,9 @@ document.querySelector('.nav-btn.prev').onclick = () => {
     slides[current].classList.add('active');
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // === PENGATURAN UTAMA ===
-    const targetDate = new Date('2025-10-07T00:00:00'); // Tentukan tanggal target
+    const targetDate = new Date('2025-10-01T00:00:00'); // Tentukan tanggal target
     const now = new Date();
 
     // === ELEMEN DOM ===
@@ -223,14 +223,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Logika untuk Efek Confetti ---
+    // GANTI FUNGSI startConfetti() YANG LAMA DENGAN INI
     function startConfetti() {
         const canvas = document.getElementById('confetti');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
         let confettiPieces = [];
         const numberOfPieces = 150;
         const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
+
+        // Fungsi untuk mengatur ukuran canvas
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Fungsi untuk mengisi ulang confetti saat ukuran berubah
+        function resetConfetti() {
+            confettiPieces = [];
+            for (let i = 0; i < numberOfPieces; i++) {
+                confettiPieces.push(new Confetti());
+            }
+        }
+
+        // Atur ukuran saat pertama kali dan saat jendela diubah ukurannya
+        setCanvasSize();
+        resetConfetti();
+        window.addEventListener('resize', () => {
+            setCanvasSize();
+            resetConfetti();
+        });
 
         function Confetti() {
             this.x = Math.random() * canvas.width;
@@ -243,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.rotationSpeed = Math.random() * 2 - 1;
         }
 
-        Confetti.prototype.update = function() {
+        Confetti.prototype.update = function () {
             this.y += this.speed;
             this.speed += this.gravity;
             this.x += Math.sin(this.y / 20) * 2;
@@ -254,17 +275,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        Confetti.prototype.draw = function() {
+        Confetti.prototype.draw = function () {
             ctx.save();
             ctx.translate(this.x, this.y);
             ctx.rotate(this.rotation * Math.PI / 180);
             ctx.fillStyle = this.color;
             ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
             ctx.restore();
-        }
-
-        for (let i = 0; i < numberOfPieces; i++) {
-            confettiPieces.push(new Confetti());
         }
 
         function animate() {

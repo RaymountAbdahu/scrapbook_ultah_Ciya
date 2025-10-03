@@ -1,3 +1,99 @@
+/* === MEDIA QUERIES UNTUK TAMPILAN MOBILE === */
+@media (max-width: 768px) {
+
+    /* Mengurangi padding utama agar tidak terlalu sempit */
+    body {
+        padding: 10px;
+    }
+
+    /* --- Penyesuaian Halaman Countdown --- */
+
+    .countdown-box {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .countdown-box h1 {
+        font-size: 1.8em; /* Ukuran judul lebih kecil */
+    }
+
+    .countdown-box p {
+        font-size: 1em;
+    }
+
+    /* Mengatur ulang timer agar lebih ringkas */
+    .timer {
+        gap: 10px; /* Jarak antar kotak lebih kecil */
+        flex-wrap: wrap; /* Izinkan kotak turun ke bawah jika tidak muat */
+    }
+
+    .timer div {
+        min-width: 70px; /* Lebar kotak lebih kecil */
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .timer span {
+        font-size: 2.2em; /* Ukuran angka lebih kecil */
+    }
+
+
+    /* --- Penyesuaian Halaman Scrapbook --- */
+
+    .scrapbook-container {
+        padding: 15px;
+        border-width: 10px;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 2em; /* Ukuran judul utama lebih kecil */
+        margin-bottom: 15px;
+    }
+
+    /* Mengatur ulang tinggi slider agar fleksibel */
+    .scrapbook-slider {
+        height: auto;
+        aspect-ratio: 1 / 1; /* Membuat slider berbentuk persegi, cocok untuk HP */
+        min-height: 350px;
+    }
+
+    /* Memperbesar ukuran item di dalam slide agar lebih jelas */
+    .page-item {
+        max-width: 95%;
+    }
+
+    .photo p, .note {
+        font-size: 1em; /* Menyesuaikan ukuran font caption dan catatan */
+    }
+
+    .note h2 {
+        font-size: 1.2em;
+    }
+    
+    .photo {
+        border-width: 8px;
+        border-bottom-width: 40px;
+    }
+    
+    .photo p {
+        bottom: -35px;
+    }
+    
+    /* Memindahkan tombol navigasi agar tidak menutupi konten */
+    .nav-btn {
+        top: 50%;
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    
+    .closing-note {
+        font-size: 1.2em;
+    }
+}
+
 body, html {
     overflow: hidden; /* Mencegah scroll saat countdown */
 }
