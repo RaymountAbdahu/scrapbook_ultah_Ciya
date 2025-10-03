@@ -132,7 +132,7 @@ document.querySelector('.nav-btn.prev').onclick = () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     // === PENGATURAN UTAMA ===
-    const targetDate = new Date('2025-10-01T00:00:00'); // Tentukan tanggal target
+    const targetDate = new Date('2025-10-07T00:00:00'); // Tentukan tanggal target
     const now = new Date();
 
     // === ELEMEN DOM ===
