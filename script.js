@@ -153,10 +153,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // === FUNGSI-FUNGSI ===
+    // GANTI FUNGSI showScrapbook() YANG LAMA DENGAN VERSI BARU INI
+
     function showScrapbook() {
         document.body.style.overflow = 'auto'; // Kembalikan fungsi scroll
         countdownContainer.classList.add('hidden');
         scrapbookContent.classList.remove('hidden');
+
+        // --- MULAI MUSIK ---
+        const music = document.getElementById('background-music');
+        // Coba putar musik
+        const playPromise = music.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Jika autoplay gagal (karena diblokir browser), akan muncul pesan di konsol.
+                // Musik akan tetap diam sampai pengguna berinteraksi.
+                console.log("Autoplay musik diblokir oleh browser. Diperlukan interaksi.");
+                // Untuk penanganan lebih lanjut, bisa ditambahkan tombol play manual di sini.
+            });
+        }
+        // -----------------
+
         initScrapbookSlider();
         startConfetti();
     }
